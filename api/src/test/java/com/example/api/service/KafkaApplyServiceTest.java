@@ -70,7 +70,7 @@ class KafkaApplyServiceTest {
             long userId = i;
             executorService.submit(() -> {
                 try {
-                    kafkaRedisAddApplyService.apply(1L); // 1이라는 유저가 1000번의 요청을 보낸다. (결과적으로 쿠폰은 1개만 발급되어야 한다.)
+                    kafkaRedisAddApplyService.apply(1L); // 1이라는 유저가 1000번의 요청을 보낸다. ( 결과적으로 쿠폰은 1개만 발급되어야 한다. )
                 } finally {
                     latch.countDown();
                 }
