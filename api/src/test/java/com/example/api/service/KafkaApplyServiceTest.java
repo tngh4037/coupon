@@ -47,6 +47,9 @@ class KafkaApplyServiceTest {
 
         latch.await();
 
+        // consumer 가 데이터를 모두 수신해서 쿠폰을 생성하는 시간이, 테스트케이스가 종료되는 시간보다는 느리므로, 여유시간을 주었다.
+        Thread.sleep(10000);
+
         // 모든 요청이 완료되면 생성된 쿠폰의 갯수를 확인한다.
         long count = couponRepository.count();
 
